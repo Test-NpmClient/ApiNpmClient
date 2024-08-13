@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@ishandry"
+    "registry": "https://npm.pkg.github.com/@TestNpmClient"
   },
   "scripts": {
     "build": "tsc"
