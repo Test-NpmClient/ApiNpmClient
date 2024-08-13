@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "declaration": true,
+    "outDir": "./lib",
+    "strict": true
+  },
+  "include": ["client.ts"],
+  "exclude": ["node_modules", "**/__tests__/*"]
+}
