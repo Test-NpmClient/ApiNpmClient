@@ -3,25 +3,39 @@ name: Publish package to GitHub Packages
 on:
     push:
         branches: [ "api-client-library" ]
+        
+    workflow_dispatch: {}
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v3
+      - uses: actions/checkout@v4
+      - name: Install .NET
+        uses: actions/setup-dotnet@v4
         with:
-            dotnet-version: '7.0.x'
+            dotnet-version: '8.0.x'
+      - name: Restore solution
+        run: dotnet restore
+      - name: Build solution
+        run: dotnet build
+
+      - name: Install client dependencies
+        working-directory: ./client/API
+        run: yarn
+
+      - name: Build package
+        working-directory: ./client/API
+        run: yarn build
       # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: "16.x"
+          node-version: "20.x"
           registry-url: "https://npm.pkg.github.com/"
-          scope: "@ishandry"
-      - run: cd client/API
-      - run: yarn
-      - run: yarn build
-      - run: npm publish
+          scope: "@testnpmclient"
+
+      - name: Publish package
+        run: npm publish
+        working-directory: ./client/API
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
