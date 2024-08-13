@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: "16.x"
           registry-url: "https://npm.pkg.github.com/"
-          scope: "@TestNpmClient"
+          scope: "@testnpmclient"
       - name: Publish package
         run: npm publish
         working-directory: ./client/API
