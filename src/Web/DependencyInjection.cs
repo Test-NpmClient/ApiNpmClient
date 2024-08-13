@@ -1,4 +1,4 @@
-﻿using Azure.Identity;
+﻿
 using ApiNpmClient.Application.Common.Interfaces;
 using ApiNpmClient.Infrastructure.Data;
 using ApiNpmClient.Web.Services;
@@ -47,19 +47,6 @@ public static class DependencyInjection
 
             configure.OperationProcessors.Add(new AspNetCoreOperationSecurityScopeProcessor("JWT"));
         });
-
-        return services;
-    }
-
-    public static IServiceCollection AddKeyVaultIfConfigured(this IServiceCollection services, ConfigurationManager configuration)
-    {
-        var keyVaultUri = configuration["KeyVaultUri"];
-        if (!string.IsNullOrWhiteSpace(keyVaultUri))
-        {
-            configuration.AddAzureKeyVault(
-                new Uri(keyVaultUri),
-                new DefaultAzureCredential());
-        }
 
         return services;
     }
