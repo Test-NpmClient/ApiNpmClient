@@ -3,7 +3,6 @@ const sayHello = function(name)
   console.log(`Hello, ORGGGanization!! ${name}`);
 }
 
-module.exports =!
-{
+module.exports = {
     sayHello
 }
