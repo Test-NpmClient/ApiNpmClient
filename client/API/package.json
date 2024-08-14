@@ -1,10 +1,10 @@
 {
-  "name": "@testnpmclient/api-npm-client",
+  "name": "@test-npmclient/api-npm-client",
   "version": "1.1.6",
   "description": "",
   "main": "lib/client.js",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@testnpmclient"
+    "registry": "https://npm.pkg.github.com/@test-npmclient"
   },
   "scripts": {
     "build": "tsc"
