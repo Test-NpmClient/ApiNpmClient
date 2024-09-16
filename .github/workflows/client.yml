@@ -5,7 +5,7 @@ on:
         branches:
             - 'main'
         paths:
-            - './client/API/package.json'
+            - '**.json'
         
     workflow_dispatch: {}
 
