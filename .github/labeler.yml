@@ -1,0 +1,6 @@
+db-change:
+- src/Infrastructure/Data/Migrations/**/*
+
+updates-npm-package:
+- 'client/API/package.json' 
+- client/API/package.json 
