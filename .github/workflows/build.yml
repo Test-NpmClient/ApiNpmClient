@@ -1,21 +1,7 @@
 name: Build
 
 on:
-  pull_request:
-    branches: [ main ]
-    paths-ignore:
-      - '.scripts/**'
-      - .gitignore
-      - CODE_OF_CONDUCT.md
-      - LICENSE
-      - README.md
-
-  workflow_call:
-    inputs:
-      build-artifacts:
-        type: boolean
-        required: true
-        default: false
+  workflow_dispatch: {}
 
 jobs:
   build:

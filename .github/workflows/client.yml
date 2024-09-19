@@ -2,7 +2,10 @@ name: Publish package to GitHub Packages
 
 on:
     push:
-        branches: [ "api-client-library" ]
+        branches:
+            - 'main'
+        paths:
+            - 'client/API/package.json'
         
     workflow_dispatch: {}
 
