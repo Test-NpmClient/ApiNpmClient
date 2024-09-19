@@ -1,6 +1,7 @@
 db-change:
-- src/Infrastructure/Data/Migrations/**/*
+- changed-files:
+  - any-glob-to-any-file: src/Infrastructure/Data/Migrations/*
 
 updates-npm-package:
-- 'client/API/package.json' 
-- client/API/package.json 
+- changed-files:
+  - any-glob-to-any-file: client/API/package.json
